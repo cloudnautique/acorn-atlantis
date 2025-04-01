@@ -1,7 +1,7 @@
 name: "Atlantis"
 args: {
 	// comma separated list 
-	repoAllowList: ""
+	repoAllowedList: ""
 	// disable GitHub personal access token method. Default is false.
 	disableGitHubPAT: false
 	// Use GitHub App for authentication. This will disable GitHub PAT auth. Default is false.
@@ -45,13 +45,13 @@ containers: atlantis: {
 			"--config",
 			"/acorn/atlantis/config.yaml",
 			"--repo-allowlist",
-			args.repoAllowList,
+			args.repoAllowedList,
 		]
 	} else {
 		command: [
 			"server",
 			"--repo-allowlist",
-			args.repoAllowList,
+			args.repoAllowedList,
 		]
 	}
 }
